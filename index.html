@@ -24,6 +24,11 @@ header.scrolled{background:rgba(244,241,233,.94);backdrop-filter:blur(10px);box-
 .submenu li a:hover{background:rgba(255,255,255,.08)}
 .nav-cta{border:1.5px solid currentColor;padding:.55rem 1.3rem;border-radius:40px;font-size:.76rem!important;letter-spacing:.1em;transition:.3s}.nav-cta:hover{background:var(--tinta);color:var(--piedra-2)}.nav-cta::after{display:none!important}
 .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:.4rem}.burger span{width:26px;height:2px;background:var(--tinta);transition:.3s}
+/* cabecera legible sobre páginas de fondo oscuro (Contacto), solo mientras está transparente */
+body.dark-hero header:not(.scrolled) .brand{color:var(--piedra-2)}
+body.dark-hero header:not(.scrolled) .brand span{color:rgba(244,241,233,.65)}
+body.dark-hero header:not(.scrolled) .menu>li>a{color:var(--piedra-2)}
+body.dark-hero header:not(.scrolled) .burger span{background:var(--piedra-2)}
 .page{display:none}.page.active{display:block}
 .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;position:relative;padding:7rem 0 3rem;background:linear-gradient(var(--linea) 1px,transparent 1px) 0 0/100% 84px,linear-gradient(90deg,var(--linea) 1px,transparent 1px) 0 0/84px 100%,var(--piedra)}
 .hero-inner{position:relative;z-index:2}
@@ -306,7 +311,7 @@ burger.addEventListener('click',function(){menu.classList.toggle('open')});
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
 function obs(){document.querySelectorAll('.reveal:not(.in)').forEach(function(el){io.observe(el)})}
 var cio=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var el=e.target,end=parseInt(el.dataset.count)||0,suf=el.dataset.suf||'',n=0;var t=setInterval(function(){n+=Math.ceil(end/45);if(n>=end){n=end;clearInterval(t)}el.textContent=n+suf},28);cio.unobserve(el)}})},{threshold:.5});
-function go(name){document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active')});var pg=document.getElementById('page-'+name);if(pg){pg.classList.add('active');window.scrollTo(0,0);obs();pg.querySelectorAll('[data-count]').forEach(function(el){cio.observe(el)});hdr.classList.toggle('scrolled',scrollY>40)}menu.classList.remove('open')}
+function go(name){document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active')});var pg=document.getElementById('page-'+name);if(pg){pg.classList.add('active');window.scrollTo(0,0);obs();pg.querySelectorAll('[data-count]').forEach(function(el){cio.observe(el)});hdr.classList.toggle('scrolled',scrollY>40)}document.body.classList.toggle('dark-hero',name==='contacto');menu.classList.remove('open')}
 document.body.addEventListener('click',function(e){var t=e.target.closest('[data-nav]');if(t){e.preventDefault();go(t.getAttribute('data-nav'))}});
 document.getElementById('yr').textContent=new Date().getFullYear();
 if(matchMedia('(prefers-reduced-motion:reduce)').matches){document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in')})}else{obs();document.querySelectorAll('#page-inicio [data-count]').forEach(function(el){cio.observe(el)})}
