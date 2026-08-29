@@ -163,6 +163,16 @@
   .about-text p:not(.sec-label){font-size:clamp(1.02rem,2.3vw,1.22rem);color:var(--ink-soft);font-weight:300;max-width:46ch}
   .about-text p + p{margin-top:1.1rem}
 
+  /* Frase destacada entre secciones */
+  .pullquote{padding:clamp(2.6rem,7vh,5rem) 0}
+  .pullquote p{
+    font-weight:300;
+    font-size:clamp(1.5rem,5.2vw,2.5rem);
+    line-height:1.2;letter-spacing:-.01em;
+    color:var(--ink);max-width:20ch;
+  }
+  .pullquote p::first-line{color:var(--ink)}
+
   /* Servicios */
   .services{display:grid;gap:0}
   .service{
@@ -192,7 +202,7 @@
 
   /* ---------- Contacto ---------- */
   .contact{background:#262625;color:var(--paper);border:0}
-  .contact .sec-label{color:#c98a8a}
+  .contact .sec-label{color:rgba(244,244,242,.7)}
   .contact .sec-label::after{background:rgba(244,244,242,.2)}
   .contact h2{
     font-weight:300;font-size:clamp(1.7rem,7vw,3.6rem);
@@ -200,10 +210,9 @@
   }
   .contact h2 a{
     color:var(--paper);text-decoration:none;
-    border-bottom:2px solid var(--accent);
     word-break:break-word;overflow-wrap:anywhere;
   }
-  .contact h2 a:hover{color:#fff;border-bottom-color:#fff}
+  .contact h2 a:hover{color:#fff}
   .contact-lead{color:rgba(244,244,242,.7);max-width:40ch;font-weight:300;font-size:1.05rem;margin-bottom:2rem}
   .contact-actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-bottom:2.6rem}
   .contact-actions a{
@@ -223,9 +232,9 @@
     font-family:'Archivo Narrow',sans-serif;
   }
   @media(min-width:620px){.contact-grid{grid-template-columns:repeat(2,auto);justify-content:start}}
-  .cline .k{font-size:.7rem;text-transform:uppercase;letter-spacing:.26em;color:rgba(244,244,242,.45);margin-bottom:.4rem}
+  .cline .k{font-size:.7rem;text-transform:uppercase;letter-spacing:.26em;color:rgba(244,244,242,.7);margin-bottom:.4rem}
   .cline .v,.cline a{color:var(--paper);text-decoration:none;font-size:1.02rem;letter-spacing:.02em;line-height:1.5}
-  .cline a:hover{color:var(--accent)}
+  .cline a:hover{color:#fff}
 
   /* ---------- Pie ---------- */
   footer{padding:2.6rem 0 3.4rem;background:#1f1f1e;color:rgba(244,244,242,.55)}
@@ -308,6 +317,13 @@
     </div>
   </section>
 
+  <!-- FRASE DESTACADA -->
+  <section class="pullquote">
+    <div class="wrap">
+      <p class="reveal" data-i18n="pull">Proyectos a la medida del cliente, diseño personalizado.</p>
+    </div>
+  </section>
+
   <!-- SERVICIOS -->
   <section>
     <div class="wrap">
@@ -381,7 +397,7 @@
     <div class="wrap">
       <p class="sec-label reveal" data-i18n="contact_label">Contacto</p>
       <h2 class="reveal"><span data-i18n="contact_h">Cuéntame tu idea.<br>Escríbeme a</span><br><a href="mailto:estudio@arquimm.com?subject=Consulta%20de%20proyecto%20%E2%80%94%20ARQUIMM">estudio@arquimm.com</a></h2>
-      <p class="contact-lead reveal" data-i18n="contact_lead">La forma más directa de empezar. Respondo personalmente a cada consulta.</p>
+      <p class="contact-lead reveal" data-i18n="contact_lead">La forma más directa de empezar.<br>Atención personalizada.</p>
       <div class="contact-actions reveal">
         <a class="ca-mail" href="mailto:estudio@arquimm.com?subject=Consulta%20de%20proyecto%20%E2%80%94%20ARQUIMM">✉ <span data-i18n="btn_write">Escribir</span></a>
         <a class="ca-tel" href="tel:+34644056864" data-i18n="btn_call">Llamar</a>
@@ -434,6 +450,7 @@
     hero_cta:"Let's talk about your project",
     about_label:"About me",
     about_p1:"I'm Nacho Muñoz, an architect who qualified at the Universitat Politècnica de València in 1994. Since then I've run my own private practice, working mainly across the provinces of València and Castellón.",
+    pull:"Projects tailored to each client, personalised design.",
     about_p2:"A comprehensive approach spanning single-family homes, heritage restoration and energy efficiency, always in line with current regulations and the Spanish Technical Building Code (CTE).",
     serv_label:"What I do",
     serv1_t:"New build",
@@ -455,7 +472,7 @@
     proc3_d:"Oversight of construction to meet schedule, budget and on-site quality.",
     contact_label:"Contact",
     contact_h:"Tell me your idea.<br>Write to me at",
-    contact_lead:"The most direct way to start. I answer every enquiry personally.",
+    contact_lead:"The most direct way to start.<br>Personal attention.",
     btn_write:"Email",
     btn_call:"Call",
     c_mail:"Email",
