@@ -138,6 +138,19 @@
     </a>
     <div class="topbar-right">
       <a class="topbar-mail" href="mailto:estudio@arquimm.com?subject=Consulta%20de%20proyecto%20%E2%80%94%20ARQUIMM"><span class="full">estudio@arquimm.com</span></a>
+    
+      <button type="button" class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false" aria-controls="menuPanel">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="menu-panel" id="menuPanel" aria-label="Páginas del sitio" hidden>
+        <a href="/">Inicio</a>
+        <a href="/sobre-mi/">Sobre mí</a>
+        <div class="menu-sep"></div>
+        <a href="/arquitecto-patrimonio-cultural-municipios-valencia/">Patrimonio cultural</a>
+        <a href="/servicio-arquitecto-ayuntamientos-municipios-valencia/">Ayuntamientos</a>
+        <div class="menu-sep"></div>
+        <a href="/#contacto">Contacto</a>
+      </nav>
     </div>
   </div>
 </header>
@@ -247,5 +260,20 @@
 <!-- Cloudflare Web Analytics -->
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "fd8c1aa45dbb46a79a7cc97200520767"}'></script>
 <!-- End Cloudflare Web Analytics -->
+<script>
+(function(){
+  var b=document.getElementById('menuBtn'), p=document.getElementById('menuPanel');
+  if(!b||!p) return;
+  function set(abierto){
+    p.hidden=!abierto;
+    b.setAttribute('aria-expanded', abierto?'true':'false');
+    b.setAttribute('aria-label', abierto?'Cerrar menú':'Abrir menú');
+  }
+  b.addEventListener('click', function(e){ e.stopPropagation(); set(p.hidden); });
+  p.addEventListener('click', function(e){ e.stopPropagation(); });
+  document.addEventListener('click', function(){ if(!p.hidden) set(false); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') set(false); });
+})();
+</script>
 </body>
 </html>
