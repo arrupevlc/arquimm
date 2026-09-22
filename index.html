@@ -254,7 +254,13 @@
   footer .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem 1.4rem;
     font-family:'Archivo Narrow',sans-serif;font-size:.78rem;letter-spacing:.05em}
   .foot-logo{height:46px;width:auto;opacity:.9}
-  .foot-meta{color:rgba(244,244,242,.55)}
+  .foot-meta{color:rgba(244,244,242,.85)}
+  .foot-legal{flex:1 0 100%;width:100%;margin-top:.5rem;
+    font-family:'Archivo Narrow',sans-serif;font-size:.78rem;letter-spacing:.05em;
+    color:rgba(244,244,242,.5)}
+  .foot-legal a{color:var(--paper);text-decoration:none;
+    border-bottom:1px solid rgba(244,244,242,.35)}
+  .foot-legal a:hover{color:#fff;border-color:rgba(244,244,242,.7)}
   @media(max-width:560px){.foot-logo{height:40px}footer .wrap{gap:.7rem}}
 
   /* Aparición al hacer scroll */
@@ -285,8 +291,8 @@
     display:flex;flex-wrap:wrap;gap:.6rem 1.6rem;margin:1.6rem 0 .2rem;
     font-family:'Archivo Narrow',sans-serif;font-size:.84rem;letter-spacing:.04em;
   }
-  .foot-nav a{color:var(--ink-soft);text-decoration:none;border-bottom:1px solid var(--line)}
-  .foot-nav a:hover{color:var(--accent-ink);border-color:var(--accent)}
+  .foot-nav a{color:var(--paper);text-decoration:none;border-bottom:1px solid rgba(244,244,242,.35)}
+  .foot-nav a:hover{color:#fff;border-color:rgba(244,244,242,.7)}
 
   /* Enlace de ampliación dentro de las tarjetas de servicio y del bloque Sobre mí */
   .mas{
@@ -605,6 +611,9 @@
       <a href="/sig/">SIG</a>
     </nav>
     <span class="foot-meta" data-i18n="foot_meta" data-es="Arquitecto · COACV 4.814 · © 2026">Arquitecto · COACV 4.814 · © 2026</span>
+    <div class="foot-legal">
+      <a href="/aviso-legal/">Aviso legal</a> · <a href="/privacidad/">Política de privacidad</a>
+    </div>
   </div>
 </footer>
 
