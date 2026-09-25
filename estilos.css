@@ -315,3 +315,57 @@
   @media(max-width:560px){
     .menu-panel{right:-.4rem;min-width:210px}
   }
+
+
+
+/* ============================================================
+   MENÚ REVISADO · que quepan siempre todas las páginas
+   ============================================================ */
+
+.menu-btn{
+  width:44px;height:44px;padding:0 10px;
+  align-items:flex-end;gap:6px;border-color:transparent;
+}
+.menu-btn span{height:1.5px;width:22px;transition:transform .25s,opacity .2s,width .25s,background .2s}
+.menu-btn span:nth-child(2){width:16px}
+.menu-btn:hover span{width:22px}
+.menu-btn[aria-expanded="true"]{border-color:transparent}
+.menu-btn[aria-expanded="true"] span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.menu-btn[aria-expanded="true"] span:nth-child(2){opacity:0}
+.menu-btn[aria-expanded="true"] span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg);width:22px}
+
+/* Móvil: panel a todo el ancho, bajo la barra, y con desplazamiento propio */
+.menu-panel{
+  position:fixed;left:0;right:0;top:58px;
+  width:auto;min-width:0;max-width:none;
+  max-height:calc(100dvh - 58px);
+  overflow-y:auto;-webkit-overflow-scrolling:touch;
+  overscroll-behavior:contain;
+  padding:.6rem 0 1.4rem;
+  border:0;border-bottom:1px solid var(--line);
+  border-radius:0;
+  box-shadow:0 18px 40px rgba(0,0,0,.10);
+}
+.menu-panel a{
+  font-size:1rem;letter-spacing:.03em;
+  padding:.85rem clamp(1.4rem,5vw,3rem);
+  white-space:normal;
+  border-bottom:1px solid var(--line);
+  color:var(--ink);
+}
+.menu-panel a:last-of-type{border-bottom:0}
+.menu-panel .menu-sep{display:none}
+
+/* A partir de tableta vuelve a ser un desplegable, pero con altura acotada */
+@media(min-width:720px){
+  .menu-panel{
+    position:absolute;left:auto;right:0;top:calc(100% + .75rem);
+    width:300px;max-width:calc(100vw - 2rem);
+    max-height:min(70vh,520px);
+    padding:.5rem 0;
+    border:1px solid var(--line);border-radius:2px;
+    box-shadow:0 12px 34px rgba(0,0,0,.08);
+  }
+  .menu-panel a{font-size:.9rem;padding:.62rem 1.15rem;border-bottom:0;color:var(--ink-soft)}
+  .menu-panel .menu-sep{display:block}
+}
