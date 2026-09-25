@@ -369,3 +369,20 @@
   .menu-panel a{font-size:.9rem;padding:.62rem 1.15rem;border-bottom:0;color:var(--ink-soft)}
   .menu-panel .menu-sep{display:block}
 }
+
+
+/* ---------- Línea legal del pie ---------- */
+.foot-legal{
+  flex:1 0 100%;width:100%;margin-top:.4rem;
+  font-family:'Archivo Narrow',sans-serif;font-size:.78rem;letter-spacing:.05em;
+  color:rgba(244,244,242,.5);
+}
+.foot-legal a{color:var(--paper);text-decoration:none;
+  border-bottom:1px solid rgba(244,244,242,.35)}
+.foot-legal a:hover{color:#fff;border-color:rgba(244,244,242,.7)}
+
+/* Páginas de texto legal: fecha de vigencia bajo el título */
+.fecha-vigencia{
+  font-family:'Archivo Narrow',sans-serif;font-size:.82rem;letter-spacing:.06em;
+  color:var(--ink-faint);margin-bottom:1.6rem;
+}
