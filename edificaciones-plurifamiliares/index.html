@@ -88,6 +88,23 @@
   ]
 }
 </script>
+<style>
+  /* Croquis intercalados en la página */
+  .croquis{padding:.4rem 0 2rem}
+  .croquis figure{margin:0}
+  .croquis img{
+    width:100%;height:auto;display:block;
+    border:1px solid var(--line);background:#fff;
+  }
+  .croquis figcaption{
+    margin-top:.75rem;
+    font-family:'Archivo Narrow',sans-serif;
+    font-size:.78rem;letter-spacing:.06em;line-height:1.5;
+    color:var(--ink-faint);max-width:62ch;
+  }
+  /* Este croquis es vertical: se acota para que no domine la página */
+  .croquis.vertical .wrap{max-width:560px;margin-inline:auto}
+</style>
 </head>
 <body>
 
@@ -129,6 +146,16 @@
       <p class="hero-lead">Tu casa, tu promoción, tu inversión. Proyecto y dirijo edificios
         plurifamiliares de viviendas trabajando en complicidad con quien promueve, dentro del
         presupuesto y en los plazos acordados.</p>
+    </div>
+  </section>
+
+  <section class="croquis vertical" aria-label="Croquis de un edificio plurifamiliar">
+    <div class="wrap">
+      <figure>
+        <img src="/croquis-edificio-plurifamiliar.jpg" width="860" height="1177" loading="lazy" decoding="async"
+             alt="Croquis a lápiz de un edificio plurifamiliar de viviendas entre medianeras, de cinco alturas, con terrazas retranqueadas, fachada de ladrillo, local y acceso al garaje en planta baja.">
+        <figcaption>Croquis de un edificio plurifamiliar entre medianeras, con las terrazas retranqueadas y el local y el garaje en planta baja.</figcaption>
+      </figure>
     </div>
   </section>
 
